@@ -14,7 +14,7 @@ const Form = ({ open, setViewForm, option, product, setProducto }) => {
 
   const onSubmit = (data) => {
     if (option === "add") {
-      fetch("http://localhost:8080/productos", {
+      fetch("http://192.168.37.10:8080/productos", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain", // El servidor espera texto plano
@@ -33,7 +33,7 @@ const Form = ({ open, setViewForm, option, product, setProducto }) => {
     } else if (option === "update") {
         console.log(data);
         
-      fetch(`http://localhost:8080/productos/${product.idProd}`, {
+      fetch(`http://192.168.37.10:8080/productos/${product.idProd}`, {
         method: "PUT",
         headers: {
           "Content-Type": "text/plain", // El servidor espera texto plano

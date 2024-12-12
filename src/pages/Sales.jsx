@@ -115,7 +115,7 @@ const Sales = () => {
   const [sales, setSales] = useState([]);
   
   useEffect(() => {
-    fetch("http://localhost:8081/ventas")
+    fetch("http://192.168.37.11:8081/ventas")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);

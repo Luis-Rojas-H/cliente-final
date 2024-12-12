@@ -10,7 +10,7 @@ const SaleDeleteModal = ({ open, setViewDelete, venta }) => {
     const handleDelete = () => {
         console.log(`Eliminar producto ${venta.id}`);
         
-        fetch(`http://localhost:8081/ventas/${venta.id}`, {
+        fetch(`http://192.168.37.11:8081/ventas/${venta.id}`, {
             method: "DELETE",
         })
         .then((response) => {

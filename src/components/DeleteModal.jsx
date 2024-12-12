@@ -8,7 +8,7 @@ const DeleteModal = ({ open, setViewDelete, product }) => {
     };
 
     const handleDelete = () => {
-        fetch(`http://localhost:8080/productos/${product.idProd}`, {
+        fetch(`http://192.168.37.10:8080/productos/${product.idProd}`, {
             method: "DELETE",
         })
         .then((response) => {

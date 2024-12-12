@@ -63,7 +63,7 @@ const SalesForm = ({ open, setViewForm, productos, totalSales }) => {
   };
 
   const handleSale = () => {
-    fetch("http://localhost:8081/ventas",
+    fetch("http://192.168.37.11:8081/ventas",
       {
         method: "POST",
         headers:{
@@ -88,7 +88,7 @@ const SalesForm = ({ open, setViewForm, productos, totalSales }) => {
         (product) => product.idProd === item.id.toString()
       );
       
-      fetch(`http://localhost:8080/productos/`,{
+      fetch(`http://192.168.37.10:8080/productos/`,{
         method: "PUT",
         headers:{
           "Content-Type": "text/plain",

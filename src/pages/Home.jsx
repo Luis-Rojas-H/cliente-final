@@ -17,7 +17,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8080/productos")
+    fetch("http://192.168.37.10:8080/productos")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
@@ -25,7 +25,7 @@ const Home = () => {
     return response.text(); // Si el servidor retorna texto plano
   })
   .then((data) => {
-    const lines = data.trim().split("\n");
+    const lines = data.trim().split("\n").filter(line => line.trim() !== "");
     const productosParseados = lines.map((line) => {
       const [idProd, nameProd, detail, amount, cost] = line.split(",");
       return { idProd, nameProd, detail, amount, cost };
